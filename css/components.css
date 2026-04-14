@@ -1,0 +1,971 @@
+/* ==========================================================================
+   COMPONENTS.CSS — Boutons, Cards, Badges, Formulaire, Témoignages...
+   GRD Rénovation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BOUTONS
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+/* Primaire — Terracotta */
+.btn--primary {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  border-color: var(--color-secondary);
+}
+
+.btn--primary:hover {
+  background-color: #b0693c;
+  border-color: #b0693c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(196, 120, 74, 0.4);
+}
+
+/* Secondaire — Outline blanc */
+.btn--outline-white {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.btn--outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Navy outline */
+.btn--outline-primary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn--outline-primary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Ghost — fond transparent, texte coloré */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-secondary);
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 0;
+}
+
+.btn--ghost:hover {
+  color: #b0693c;
+  gap: 0.75rem;
+}
+
+/* Large */
+.btn--lg {
+  padding: 1.1rem 2.5rem;
+  font-size: 1rem;
+}
+
+/* Small */
+.btn--sm {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.8rem;
+}
+
+/* Icône seule */
+.btn--icon {
+  padding: 0.875rem;
+  border-radius: 50%;
+}
+
+/* Groupes de boutons */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+/* --------------------------------------------------------------------------
+   2. CARDS — Service
+   -------------------------------------------------------------------------- */
+.service-card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  background-color: var(--color-surface-alt);
+}
+
+.service-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-card__img {
+  transform: scale(1.07);
+}
+
+.service-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(27, 42, 74, 0.92) 0%, rgba(27, 42, 74, 0.3) 60%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.75rem;
+  transition: background var(--transition-base);
+}
+
+.service-card:hover .service-card__overlay {
+  background: linear-gradient(to top, rgba(27, 42, 74, 0.97) 0%, rgba(27, 42, 74, 0.5) 60%, rgba(27, 42, 74, 0.1) 100%);
+}
+
+.service-card__icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.4rem;
+}
+
+.service-card__desc {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.service-card:hover .service-card__desc {
+  max-height: 100px;
+  opacity: 1;
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: gap var(--transition-base);
+}
+
+.service-card__link:hover {
+  gap: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   3. CARDS — Feature/Avantage
+   -------------------------------------------------------------------------- */
+.feature-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-card__icon {
+  width: 56px;
+  height: 56px;
+  background-color: rgba(196, 120, 74, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.feature-card__title {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.feature-card__text {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   4. CARDS — Réalisation / Portfolio
+   -------------------------------------------------------------------------- */
+.project-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(27, 42, 74, 0.15);
+  border-color: rgba(196, 120, 74, 0.3);
+}
+
+.project-card__info {
+  padding: 1.25rem 1.5rem 1.5rem;
+  position: relative;
+}
+
+/* Ligne décorative colorée au hover */
+.project-card__info::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  border-radius: 3px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-card__info::before {
+  transform: scaleX(1);
+}
+
+.project-card__category {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  background-color: rgba(196, 120, 74, 0.1);
+  color: var(--color-secondary);
+  border-radius: 50px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  transition: background-color var(--transition-base);
+}
+
+.project-card:hover .project-card__category {
+  background-color: rgba(196, 120, 74, 0.18);
+}
+
+.project-card__title {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+  transition: color var(--transition-base);
+}
+
+.project-card:hover .project-card__title {
+  color: var(--color-secondary);
+}
+
+.project-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. SLIDER AVANT / APRÈS
+   -------------------------------------------------------------------------- */
+.ba-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  aspect-ratio: 4/3;
+  cursor: col-resize;
+  user-select: none;
+  background-color: #111;
+}
+
+.ba-slider__after,
+.ba-slider__before {
+  position: absolute;
+  inset: 0;
+}
+
+.ba-slider__after img,
+.ba-slider__before img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* L'image "avant" est clippée depuis la droite */
+.ba-slider__before {
+  clip-path: inset(0 50% 0 0);
+  z-index: 2;
+}
+
+.ba-slider__label {
+  position: absolute;
+  bottom: 0.75rem;
+  padding: 0.3rem 0.75rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 50px;
+  backdrop-filter: blur(4px);
+}
+
+.ba-slider__before .ba-slider__label {
+  right: 0.75rem;
+  z-index: 3;
+}
+
+.ba-slider__after .ba-slider__label {
+  left: 0.75rem;
+}
+
+/* Handle draggable */
+.ba-slider__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ba-slider__line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.ba-slider__circle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.35);
+  color: var(--color-primary);
+  font-weight: 700;
+  z-index: 11;
+}
+
+/* --------------------------------------------------------------------------
+   6. BADGES
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.875rem;
+  border-radius: 50px;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.badge--primary {
+  background-color: rgba(27, 42, 74, 0.1);
+  color: var(--color-primary);
+}
+
+.badge--secondary {
+  background-color: rgba(196, 120, 74, 0.12);
+  color: var(--color-secondary);
+}
+
+.badge--accent {
+  background-color: rgba(212, 169, 106, 0.15);
+  color: #a07030;
+}
+
+.badge--white {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   7. BARRE DE STATISTIQUES
+   -------------------------------------------------------------------------- */
+.stats-bar {
+  background-color: var(--color-surface);
+  padding: var(--space-8) 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4) var(--space-2);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-item {
+  padding: var(--space-2);
+}
+
+.stat-item__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, var(--text-4xl));
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.stat-item__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Séparateurs entre stats */
+@media (min-width: 768px) {
+  .stat-item + .stat-item {
+    border-left: 1px solid var(--color-border);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. TÉMOIGNAGES
+   -------------------------------------------------------------------------- */
+.testimonial-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  font-family: var(--font-heading);
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-secondary);
+  opacity: 0.4;
+  position: absolute;
+  top: 0.5rem;
+  left: 1.5rem;
+}
+
+.testimonial-card__text {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.testimonial-card__author {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: white;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.testimonial-card__name {
+  font-weight: 700;
+  color: var(--color-white);
+  font-size: var(--text-sm);
+}
+
+.testimonial-card__location {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. PROCESSUS / ÉTAPES
+   -------------------------------------------------------------------------- */
+.process-steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .process-steps {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+  }
+
+  /* Ligne de connexion entre les étapes */
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.5rem;
+    left: calc(12.5% + 1.25rem);
+    right: calc(12.5% + 1.25rem);
+    height: 2px;
+    background: linear-gradient(to right, var(--color-secondary), var(--color-accent));
+    z-index: 0;
+  }
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.process-step__number {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: white;
+  margin: 0 auto var(--space-2);
+  position: relative;
+  box-shadow: 0 4px 16px rgba(196, 120, 74, 0.35);
+}
+
+.process-step__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.process-step__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. FORMULAIRE CONTACT
+   -------------------------------------------------------------------------- */
+.contact-form {
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+@media (min-width: 768px) {
+  .contact-form {
+    padding: 3rem 2.5rem;
+  }
+}
+
+.form__title {
+  font-size: var(--text-xl);
+  margin-bottom: 0.5rem;
+}
+
+.form__subtitle {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-4);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 600px) {
+  .form__row--2col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--space-3);
+}
+
+.form__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.form__label span {
+  color: var(--color-secondary);
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  appearance: none;
+}
+
+.form__input::placeholder,
+.form__textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 0 4px rgba(196, 120, 74, 0.12);
+}
+
+/* États de validation */
+.form__input.is-valid,
+.form__select.is-valid,
+.form__textarea.is-valid {
+  border-color: var(--color-success);
+}
+
+.form__input.is-error,
+.form__select.is-error,
+.form__textarea.is-error {
+  border-color: var(--color-error);
+  background-color: rgba(192, 57, 43, 0.03);
+}
+
+.form__error {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form__error.is-visible {
+  display: block;
+}
+
+.form__select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6460' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form__success {
+  display: none;
+  text-align: center;
+  padding: var(--space-8) var(--space-4);
+}
+
+.form__success.is-visible {
+  display: block;
+}
+
+.form__success__icon {
+  font-size: 3rem;
+  margin-bottom: var(--space-2);
+}
+
+.form__success__title {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-1);
+}
+
+.form__success__text {
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   11. FILTRES (page réalisations)
+   -------------------------------------------------------------------------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: var(--space-6);
+}
+
+.filter-btn {
+  padding: 0.55rem 1.25rem;
+  border: 2px solid var(--color-border);
+  border-radius: 50px;
+  background-color: transparent;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.filter-btn.is-active {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+/* --------------------------------------------------------------------------
+   12. CTA BANNIÈRE
+   -------------------------------------------------------------------------- */
+.cta-banner {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #a05030 100%);
+  padding: var(--space-12) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+
+.cta-banner h2 {
+  color: var(--color-white);
+  font-size: clamp(1.6rem, 3.5vw, var(--text-3xl));
+  margin-bottom: var(--space-2);
+}
+
+.cta-banner p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: var(--text-md);
+  margin-bottom: var(--space-4);
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------------------------
+   13. TIMELINE (page à propos)
+   -------------------------------------------------------------------------- */
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-secondary), var(--color-accent));
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: var(--space-6);
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -2.4rem;
+  top: 0.3rem;
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-secondary);
+  border: 3px solid var(--color-white);
+  border-radius: 50%;
+  box-shadow: var(--shadow-sm);
+}
+
+.timeline-item__year {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  margin-bottom: 0.35rem;
+}
+
+.timeline-item__title {
+  font-size: var(--text-md);
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-item__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   14. CONTACT INFO CARD
+   -------------------------------------------------------------------------- */
+.contact-info-card {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  color: var(--color-white);
+  height: 100%;
+}
+
+.contact-info-card h3 {
+  color: var(--color-white);
+  margin-bottom: var(--space-4);
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+}
+
+.contact-item__icon {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-item__content {
+  flex: 1;
+}
+
+.contact-item__label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 0.25rem;
+}
+
+.contact-item__value {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.contact-item__value a {
+  color: var(--color-accent);
+  transition: color var(--transition-fast);
+}
+
+.contact-item__value a:hover {
+  color: var(--color-white);
+}

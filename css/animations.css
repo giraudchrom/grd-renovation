@@ -1,0 +1,179 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Scroll Reveals, Keyframes, Transitions
+   GRD Rénovation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CLASSES REVEAL (état initial — invisible)
+   Activées par IntersectionObserver via JS → classe .is-visible
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.90);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal--fade {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+/* État visible — ajouté par JS */
+.reveal.is-visible,
+.reveal--left.is-visible,
+.reveal--right.is-visible,
+.reveal--scale.is-visible,
+.reveal--fade.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Délais échelonnés pour grilles de cards */
+.reveal--delay-1  { transition-delay: 80ms; }
+.reveal--delay-2  { transition-delay: 160ms; }
+.reveal--delay-3  { transition-delay: 240ms; }
+.reveal--delay-4  { transition-delay: 320ms; }
+.reveal--delay-5  { transition-delay: 400ms; }
+.reveal--delay-6  { transition-delay: 480ms; }
+
+/* --------------------------------------------------------------------------
+   2. KEYFRAMES
+   -------------------------------------------------------------------------- */
+
+/* Flottement doux (hero arrow, éléments décoratifs) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Pulsation (bouton appeler) */
+@keyframes pulse-ring {
+  0%   { transform: scale(1); box-shadow: 0 0 0 0 rgba(196, 120, 74, 0.5); }
+  70%  { transform: scale(1); box-shadow: 0 0 0 14px rgba(196, 120, 74, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(196, 120, 74, 0); }
+}
+
+/* Glissement depuis le bas (boutons flottants entrée) */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Fondu entrant */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Barres de progression */
+@keyframes progress-bar {
+  from { width: 0; }
+  to   { width: var(--bar-width, 80%); }
+}
+
+/* Rotation loader */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Chevron flottant */
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50%       { transform: translateY(8px) translateX(-50%); }
+}
+
+/* Shimmer (skeleton loader) */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* --------------------------------------------------------------------------
+   3. CLASSES D'ANIMATION UTILITAIRES
+   -------------------------------------------------------------------------- */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.5s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.8s ease forwards;
+}
+
+/* Délais pour entrée des boutons flottants */
+.animate-slide-up--delay-1 { animation-delay: 1.8s; animation-fill-mode: both; opacity: 0; }
+.animate-slide-up--delay-2 { animation-delay: 2.1s; animation-fill-mode: both; opacity: 0; }
+
+/* --------------------------------------------------------------------------
+   4. TRANSITIONS HOVER GLOBALES
+   -------------------------------------------------------------------------- */
+
+/* Lift effect — ombre + légère élévation au hover */
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Underline animée */
+.hover-underline {
+  position: relative;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
+  transition: width var(--transition-base);
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Image zoom au hover (sur le conteneur) */
+.hover-zoom {
+  overflow: hidden;
+}
+.hover-zoom img {
+  transition: transform 0.6s ease;
+}
+.hover-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* --------------------------------------------------------------------------
+   5. TRANSITIONS DE PAGE
+   -------------------------------------------------------------------------- */
+.page-transition-enter {
+  animation: fade-in 0.4s ease;
+}

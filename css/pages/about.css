@@ -1,0 +1,263 @@
+/* ==========================================================================
+   ABOUT.CSS — Page À propos
+   GRD Rénovation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SECTION PRÉSENTATION
+   -------------------------------------------------------------------------- */
+.about-intro {
+  padding: var(--space-16) 0 var(--space-12);
+}
+
+.about-intro__layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-intro__layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Image portrait */
+.about-portrait {
+  position: relative;
+}
+
+.about-portrait__img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+}
+
+/* Cadre décoratif derrière l'image */
+.about-portrait::before {
+  content: '';
+  position: absolute;
+  top: -1.5rem;
+  left: -1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  border: 3px solid var(--color-secondary);
+  border-radius: var(--radius-xl);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.about-portrait__caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background-color: var(--color-secondary);
+  color: white;
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+.about-portrait__name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.about-portrait__role {
+  font-size: var(--text-xs);
+  opacity: 0.85;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Texte */
+.about-intro__text p {
+  color: var(--color-text-muted);
+  line-height: 1.85;
+  margin-bottom: var(--space-3);
+}
+
+.about-intro__text p:first-of-type {
+  font-size: var(--text-md);
+  color: var(--color-text);
+}
+
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.about-signature__img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-signature__name {
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.95rem;
+}
+
+.about-signature__title {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION VALEURS
+   -------------------------------------------------------------------------- */
+.values-section {
+  background-color: var(--color-surface);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION TIMELINE
+   -------------------------------------------------------------------------- */
+.timeline-section {
+  padding: var(--space-12) 0;
+}
+
+.timeline-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .timeline-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.timeline-intro p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--space-3);
+}
+
+.timeline-highlight {
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-secondary);
+  padding: 1.25rem 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-4);
+}
+
+.timeline-highlight p {
+  font-size: var(--text-md);
+  font-style: italic;
+  color: var(--color-primary);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION ENGAGEMENTS / CERTIFICATIONS
+   -------------------------------------------------------------------------- */
+.certifications-section {
+  background-color: var(--color-primary);
+  padding: var(--space-12) 0;
+}
+
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .certifications-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.cert-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  transition: background-color var(--transition-base), transform var(--transition-base);
+}
+
+.cert-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+}
+
+.cert-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cert-card__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: 0.3rem;
+}
+
+.cert-card__desc {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ==========================================================================
+   RESPONSIVE MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .about-portrait__img {
+    height: 380px;
+  }
+
+  /* Cadre décoratif : recentré pour éviter le débordement */
+  .about-portrait::before {
+    top: -0.75rem;
+    left: -0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
+  }
+
+  .about-intro {
+    padding: var(--space-12) 0 var(--space-8);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-portrait__img {
+    height: 300px;
+  }
+
+  /* Masquer le cadre décoratif sur très petit écran */
+  .about-portrait::before {
+    display: none;
+  }
+}

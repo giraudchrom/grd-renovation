@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réalisations — GRD Rénovation | Portfolio avant/après</title>
+  <meta name="description" content="Découvrez les réalisations de GRD Rénovation : toiture, façade et murs intérieurs. Galerie avant/après avec des projets réels.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.grdrenovation.fr/realisations.html">
+  <meta property="og:title" content="Nos Réalisations — GRD Rénovation">
+  <meta property="og:description" content="Galerie de nos chantiers de rénovation — avant et après transformation.">
+  <meta property="og:locale" content="fr_FR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/realisations.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header site-header--solid" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="site-logo">
+          <img src="img/logo.png" alt="GRD Rénovation" class="site-logo__img">
+        </a>
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html" class="site-nav__link">Accueil</a>
+          <a href="about.html" class="site-nav__link">À propos</a>
+          <a href="services.html" class="site-nav__link">Services</a>
+          <a href="realisations.html" class="site-nav__link" aria-current="page">Réalisations</a>
+          <a href="contact.html" class="site-nav__link">Contact</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+          <span class="hamburger__line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Fermer le menu">✕</button>
+    <a href="index.html" class="mobile-menu__link">Accueil</a>
+    <div class="mobile-menu__divider"></div>
+    <a href="about.html" class="mobile-menu__link">À propos</a>
+    <a href="services.html" class="mobile-menu__link">Services</a>
+    <a href="realisations.html" class="mobile-menu__link" aria-current="page">Réalisations</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__contact">
+      <a href="tel:0619014917">📞 06 19 01 49 17</a>
+      <a href="mailto:grdrenov@gmail.com">✉ grdrenov@gmail.com</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80&auto=format&fit=crop" alt="" class="page-hero__bg" aria-hidden="true" fetchpriority="high">
+    <div class="page-hero__overlay" aria-hidden="true"></div>
+    <div class="container">
+      <div class="page-hero__content">
+        <span class="eyebrow page-hero__eyebrow">Portfolio</span>
+        <h1>Nos réalisations</h1>
+        <p class="page-hero__subtitle">Des projets concrets, des transformations réelles. Découvrez quelques-uns de nos chantiers avec le résultat avant et après.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTRES -->
+  <section class="realisations-intro section--surface" aria-label="Filtres">
+    <div class="container">
+      <div class="realisations-count">
+        <p class="realisations-count__text"><span class="realisations-count__number" id="projectCount">6</span> réalisations</p>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);">Glissez le curseur pour voir l'avant/après ↔</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section style="padding: var(--space-8) 0 var(--space-12);" aria-labelledby="galerie-title">
+    <div class="container">
+      <h2 class="sr-only" id="galerie-title">Galerie de réalisations</h2>
+
+      <!-- Barre de filtres -->
+      <div class="filter-bar" role="group" aria-label="Filtrer par catégorie">
+        <button class="filter-btn is-active" data-filter="all">Tous les projets</button>
+        <button class="filter-btn" data-filter="toiture">Toiture</button>
+        <button class="filter-btn" data-filter="facade">Façade</button>
+        <button class="filter-btn" data-filter="murs">Murs intérieurs</button>
+      </div>
+
+      <div class="slider-hint" aria-hidden="true">
+        <span class="slider-hint__icon">↔</span>
+        <span>Faites glisser le curseur sur les photos pour voir la transformation</span>
+      </div>
+
+      <div class="realisations-grid" id="projectsGrid">
+
+        <!-- Projet 3 — Façade -->
+        <article class="project-card reveal reveal--scale reveal--delay-1" data-category="facade">
+          <div class="ba-slider" data-ba-slider aria-label="Avant/après — Ravalement façade" role="img">
+            <div class="ba-slider__after">
+              <img
+                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80&auto=format&fit=crop"
+                alt="Après ravalement de façade — maison modernisée"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Après</span>
+            </div>
+            <div class="ba-slider__before">
+              <img
+                src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&q=75&auto=format&fit=crop"
+                alt="Avant ravalement — façade ancienne"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Avant</span>
+            </div>
+            <div class="ba-slider__handle" aria-hidden="true">
+              <div class="ba-slider__line"></div>
+              <div class="ba-slider__circle">↔</div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Façade</span>
+            <h3 class="project-card__title">Ravalement de façade sur maison individuelle</h3>
+            <p class="project-card__desc">Nettoyage haute pression, enduit de façade et application d'une peinture hydrofuge.</p>
+          </div>
+        </article>
+
+        <!-- Projet 4 — Murs intérieurs -->
+        <article class="project-card reveal reveal--scale reveal--delay-2" data-category="murs">
+          <div class="ba-slider" data-ba-slider aria-label="Avant/après — Murs intérieurs" role="img">
+            <div class="ba-slider__after">
+              <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80&auto=format&fit=crop"
+                alt="Après rénovation murs intérieurs — lisse et peint"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Après</span>
+            </div>
+            <div class="ba-slider__before">
+              <img
+                src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=700&q=75&auto=format&fit=crop"
+                alt="Avant rénovation — murs abîmés"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Avant</span>
+            </div>
+            <div class="ba-slider__handle" aria-hidden="true">
+              <div class="ba-slider__line"></div>
+              <div class="ba-slider__circle">↔</div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Murs intérieurs</span>
+            <h3 class="project-card__title">Remise à neuf d'une maison ancienne</h3>
+            <p class="project-card__desc">Enduit de lissage sur l'ensemble des murs, peinture bi-couche — 120 m² de surface murale.</p>
+          </div>
+        </article>
+
+        <!-- Projet 5 — Toiture -->
+        <article class="project-card reveal reveal--scale reveal--delay-3" data-category="toiture">
+          <div class="ba-slider" data-ba-slider aria-label="Avant/après — Réfection de toiture" role="img">
+            <div class="ba-slider__after">
+              <img
+                src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&q=80&auto=format&fit=crop"
+                alt="Après réfection de toiture — maison rénovée"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Après</span>
+            </div>
+            <div class="ba-slider__before">
+              <img
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75&auto=format&fit=crop"
+                alt="Avant réfection — toiture ancienne"
+                loading="lazy"
+              >
+              <span class="ba-slider__label">Avant</span>
+            </div>
+            <div class="ba-slider__handle" aria-hidden="true">
+              <div class="ba-slider__line"></div>
+              <div class="ba-slider__circle">↔</div>
+            </div>
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Toiture</span>
+            <h3 class="project-card__title">Réfection complète d'une toiture en tuiles</h3>
+            <p class="project-card__desc">Dépose totale, isolation sous toiture, pose de nouvelles tuiles mécaniques — maison individuelle.</p>
+          </div>
+        </article>
+
+        <!-- Message si aucun résultat -->
+        <div class="no-results" id="noResults" aria-live="polite">
+          <p class="no-results__icon" aria-hidden="true">🔍</p>
+          <p class="no-results__text">Aucune réalisation dans cette catégorie pour le moment.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-banner">
+    <div class="container" style="position:relative;z-index:1;">
+      <h2>Votre projet pourrait être le prochain</h2>
+      <p>Contactez-nous pour discuter de votre projet de rénovation et obtenir votre devis gratuit.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn--outline-white btn--lg">Demander un devis</a>
+        <a href="tel:0619014917" class="btn btn--lg" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          06 19 01 49 17
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <img src="img/logo.png" alt="GRD Rénovation" class="site-logo__img">
+          </a>
+          <p class="footer-tagline">Entreprise de rénovation intérieure et extérieure. Plus de 20 ans d'expérience.</p>
+          <span class="footer-badge">🏠 Créée en octobre 2025</span>
+        </div>
+        <div>
+          <p class="footer-col__title">Navigation</p>
+          <nav class="footer-nav">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="services.html">Services</a>
+            <a href="realisations.html">Réalisations</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer-col__title">Contact</p>
+          <div class="footer-contact-item"><div class="footer-contact-item__icon">📞</div><div class="footer-contact-item__text"><a href="tel:0619014917">06 19 01 49 17</a></div></div>
+          <div class="footer-contact-item"><div class="footer-contact-item__icon">✉</div><div class="footer-contact-item__text"><a href="mailto:grdrenov@gmail.com">grdrenov@gmail.com</a></div></div>
+          <div class="footer-contact-item"><div class="footer-contact-item__icon">📍</div><div class="footer-contact-item__text">Région Centre</div></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 GRD Rénovation — Tous droits réservés</p>
+        <p>Giraud Anthony — <a href="mailto:grdrenov@gmail.com">grdrenov@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boutons flottants -->
+  <div class="floating-cta" id="floatingCta" aria-label="Actions rapides">
+    <a href="tel:0619014917" class="floating-btn floating-btn--call animate-slide-up--delay-1" aria-label="Appeler GRD Rénovation">
+      <svg class="floating-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <span class="floating-btn__text">Appeler</span>
+    </a>
+    <a href="contact.html" class="floating-btn floating-btn--quote animate-slide-up--delay-2" aria-label="Demander un devis gratuit">
+      <svg class="floating-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      <span class="floating-btn__text">Devis gratuit</span>
+    </a>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

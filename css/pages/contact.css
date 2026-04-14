@@ -1,0 +1,136 @@
+/* ==========================================================================
+   CONTACT.CSS — Page Contact
+   GRD Rénovation
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAYOUT CONTACT
+   -------------------------------------------------------------------------- */
+.contact-section {
+  padding: var(--space-12) 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   CARTE DISPONIBILITÉ
+   -------------------------------------------------------------------------- */
+.availability-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-top: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.availability-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #4ade80;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.availability-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  background-color: rgba(74, 222, 128, 0.3);
+  border-radius: 50%;
+  animation: pulse-ring 2s ease infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.availability-text {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.5;
+}
+
+.availability-text strong {
+  color: var(--color-white);
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   ZONE D'INTERVENTION VISUELLE
+   -------------------------------------------------------------------------- */
+.zone-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  margin-top: var(--space-3);
+}
+
+.zone-card__title {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+.zone-card__text {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION FAQ MINI
+   -------------------------------------------------------------------------- */
+.faq-section {
+  background-color: var(--color-surface);
+  padding: var(--space-12) 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .faq-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.faq-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+}
+
+.faq-item h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+}
+
+.faq-item p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}

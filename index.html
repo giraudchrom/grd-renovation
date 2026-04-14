@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>GRD Rénovation | Artisan Rénovateur — Toiture, Façade, Murs</title>
+  <meta name="description" content="GRD Rénovation, artisan spécialisé en rénovation de toiture, façade et murs intérieurs. Plus de 20 ans d'expérience. Devis gratuit.">
+  <meta name="author" content="Giraud Anthony — GRD Rénovation">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.grdrenovation.fr/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="GRD Rénovation | Artisan Rénovateur de confiance">
+  <meta property="og:description" content="Toiture, façade, murs intérieurs. 20 ans d'expérience. Devis gratuit sous 48h.">
+  <meta property="og:url" content="https://www.grdrenovation.fr/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="GRD Rénovation">
+
+  <!-- Schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "GRD Rénovation",
+    "description": "Artisan rénovateur spécialisé en toiture, façade et murs intérieurs",
+    "founder": { "@type": "Person", "name": "Giraud Anthony" },
+    "foundingDate": "2025-10",
+    "email": "grdrenov@gmail.com",
+    "telephone": "+33619014917",
+    "url": "https://www.grdrenovation.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Région Centre",
+      "postalCode": "37",
+      "addressCountry": "FR"
+    },
+    "areaServed": {
+      "@type": "AdministrativeArea",
+      "name": "Région Centre"
+    },
+    "priceRange": "€€",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services de rénovation",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rénovation de toiture" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rénovation de façade" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Rénovation des murs intérieurs" } },
+      ]
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/pages/home.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       HEADER
+       ===================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="index.html" class="site-logo" aria-label="GRD Rénovation — Accueil">
+          <img src="img/logo.png" alt="GRD Rénovation" class="site-logo__img">
+        </a>
+
+        <!-- Navigation desktop -->
+        <nav class="site-nav" aria-label="Navigation principale">
+          <a href="index.html" class="site-nav__link" aria-current="page">Accueil</a>
+          <a href="about.html" class="site-nav__link">À propos</a>
+          <a href="services.html" class="site-nav__link">Services</a>
+          <a href="realisations.html" class="site-nav__link">Réalisations</a>
+          <a href="contact.html" class="site-nav__link">Contact</a>
+        </nav>
+
+
+        <!-- Hamburger mobile -->
+        <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+          <span class="hamburger__line" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile" aria-hidden="true">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Fermer le menu">✕</button>
+    <a href="index.html" class="mobile-menu__link" aria-current="page">Accueil</a>
+    <div class="mobile-menu__divider" aria-hidden="true"></div>
+    <a href="about.html" class="mobile-menu__link">À propos</a>
+    <a href="services.html" class="mobile-menu__link">Services</a>
+    <a href="realisations.html" class="mobile-menu__link">Réalisations</a>
+    <a href="contact.html" class="mobile-menu__link">Contact</a>
+    <div class="mobile-menu__contact">
+      <a href="tel:0619014917">📞 06 19 01 49 17</a>
+      <a href="mailto:grdrenov@gmail.com">✉ grdrenov@gmail.com</a>
+    </div>
+  </nav>
+
+  <!-- =====================================================================
+       HERO
+       ===================================================================== -->
+  <section class="hero" aria-label="Section principale">
+    <video
+      class="hero__video"
+      autoplay muted loop playsinline
+      poster="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80&auto=format&fit=crop"
+    >
+      <source src="https://videos.pexels.com/video-files/7253679/7253679-hd_1920_1080_30fps.mp4" type="video/mp4">
+      <source src="https://videos.pexels.com/video-files/7253679/7253679-hd_1280_720_30fps.mp4" type="video/mp4">
+    </video>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="container">
+      <div class="hero__content">
+        <span class="eyebrow hero__eyebrow">Artisan Rénovateur — 20 ans d'expérience</span>
+        <h1 class="hero__title">
+          Donnez une <em>nouvelle vie</em><br>à votre habitat
+        </h1>
+        <p class="hero__subtitle">
+          Toiture, façade ou murs intérieurs — GRD Rénovation transforme vos espaces avec le soin et la précision d'un artisan passionné.
+        </p>
+        <div class="hero__cta btn-group">
+          <a href="tel:0619014917" class="btn btn--primary btn--lg">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+            Appeler maintenant
+          </a>
+          <a href="contact.html" class="btn btn--outline-white btn--lg">
+            Devis gratuit
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="hero__trust">
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> Devis gratuit sous 48h</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> Région Centre</span>
+          <span class="trust-badge"><span class="trust-badge__icon">✓</span> 20 ans d'expérience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Découvrir</span>
+      <span class="hero__scroll-arrow">↓</span>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       STATS BAR
+       ===================================================================== -->
+  <section class="stats-bar" aria-label="Chiffres clés">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal reveal--delay-1">
+          <span class="stat-item__number" data-counter data-target="20" data-suffix="+">20+</span>
+          <span class="stat-item__label">Années d'expérience</span>
+        </div>
+        <div class="stat-item reveal reveal--delay-2">
+          <span class="stat-item__number" data-counter data-target="200" data-suffix="+">200+</span>
+          <span class="stat-item__label">Chantiers réalisés</span>
+        </div>
+        <div class="stat-item reveal reveal--delay-3">
+          <span class="stat-item__number" data-counter data-target="4" data-suffix="">4</span>
+          <span class="stat-item__label">Services spécialisés</span>
+        </div>
+        <div class="stat-item reveal reveal--delay-4">
+          <span class="stat-item__number" data-counter data-target="100" data-suffix="%">100%</span>
+          <span class="stat-item__label">Clients satisfaits</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SERVICES PREVIEW
+       ===================================================================== -->
+  <section class="services-preview" aria-labelledby="services-title">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="eyebrow">Nos expertises</span>
+        <h2 class="section-title" id="services-title">Des rénovations qui font la différence</h2>
+        <p class="section-subtitle">Du toit jusqu'au sol, nous intervenons sur tous les postes de rénovation de votre bien.</p>
+      </header>
+
+      <div class="services-preview-grid">
+        <!-- Toiture -->
+        <article class="service-card reveal reveal--scale reveal--delay-1">
+          <img
+            src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=75&auto=format&fit=crop"
+            alt="Rénovation de toiture — maison individuelle"
+            class="service-card__img"
+            loading="lazy"
+          >
+          <div class="service-card__overlay">
+            <span class="service-card__icon" aria-hidden="true">🏠</span>
+            <h3 class="service-card__title">Toiture</h3>
+            <p class="service-card__desc">Nettoyage, traitement, remplacement de tuiles et entretien complet de votre couverture.</p>
+            <a href="services.html#toiture" class="service-card__link">
+              Découvrir <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Façade -->
+        <article class="service-card reveal reveal--scale reveal--delay-2">
+          <img
+            src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=75&auto=format&fit=crop"
+            alt="Rénovation de façade — maison propre et valorisée"
+            class="service-card__img"
+            loading="lazy"
+          >
+          <div class="service-card__overlay">
+            <span class="service-card__icon" aria-hidden="true">🏡</span>
+            <h3 class="service-card__title">Façade</h3>
+            <p class="service-card__desc">Ravalement, enduit, peinture façade pour valoriser votre maison et la protéger durablement.</p>
+            <a href="services.html#facade" class="service-card__link">
+              Découvrir <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Murs intérieurs -->
+        <article class="service-card reveal reveal--scale reveal--delay-3">
+          <img
+            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=75&auto=format&fit=crop"
+            alt="Rénovation des murs intérieurs — enduit et peinture"
+            class="service-card__img"
+            loading="lazy"
+          >
+          <div class="service-card__overlay">
+            <span class="service-card__icon" aria-hidden="true">🖌️</span>
+            <h3 class="service-card__title">Murs intérieurs</h3>
+            <p class="service-card__desc">Plâtrerie, enduit, peinture et revêtements muraux pour des intérieurs impeccables.</p>
+            <a href="services.html#murs" class="service-card__link">
+              Découvrir <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <div style="text-align:center; margin-top: 3rem;">
+        <a href="services.html" class="btn btn--outline-primary">Voir tous nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       POURQUOI GRD
+       ===================================================================== -->
+  <section class="why-grd" aria-labelledby="why-title">
+    <div class="container">
+      <div class="why-grd__layout">
+        <!-- Image -->
+        <div class="why-grd__image-wrap reveal reveal--left">
+          <img
+            src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=900&q=80&auto=format&fit=crop"
+            alt="Intérieur de maison rénové — résultat impeccable"
+            class="why-grd__img"
+            loading="lazy"
+          >
+          <div class="why-grd__badge" aria-label="20 ans d'expérience">
+            <span class="why-grd__badge-number">20</span>
+            <span class="why-grd__badge-text">ans d'expérience</span>
+          </div>
+        </div>
+
+        <!-- Contenu -->
+        <div class="reveal reveal--right">
+          <span class="eyebrow">Pourquoi nous choisir</span>
+          <h2 class="section-title" id="why-title">L'expertise artisanale au service de votre projet</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.8;">
+            Chez GRD Rénovation, chaque chantier est traité avec le même niveau d'exigence et de professionnalisme. Giraud Anthony met son savoir-faire de plus de 20 ans à votre disposition pour des réalisations durables et de qualité.
+          </p>
+
+          <ul class="why-list" role="list">
+            <li class="why-item">
+              <div class="why-item__icon" aria-hidden="true">🏅</div>
+              <div>
+                <p class="why-item__title">Artisan qualifié avec 20 ans d'expérience</p>
+                <p class="why-item__text">Un savoir-faire terrain acquis sur des centaines de chantiers variés, dans toutes les configurations.</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-item__icon" aria-hidden="true">📋</div>
+              <div>
+                <p class="why-item__title">Devis gratuit et transparent sous 48h</p>
+                <p class="why-item__text">Nous nous déplaçons gratuitement pour évaluer votre projet et vous proposer un chiffrage détaillé sans surprise.</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-item__icon" aria-hidden="true">🔧</div>
+              <div>
+                <p class="why-item__title">Matériaux de qualité et travail soigné</p>
+                <p class="why-item__text">Nous sélectionnons des produits durables et adaptés à chaque situation pour garantir la pérennité de nos interventions.</p>
+              </div>
+            </li>
+            <li class="why-item">
+              <div class="why-item__icon" aria-hidden="true">🗺️</div>
+              <div>
+                <p class="why-item__title">Région Centre</p>
+                <p class="why-item__text">Nous intervenons dans toute la Région Centre.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div style="margin-top: 2.5rem;">
+            <a href="about.html" class="btn btn--primary">En savoir plus sur nous</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       TEASER RÉALISATIONS
+       ===================================================================== -->
+  <section class="realisations-teaser" aria-labelledby="real-title">
+    <div class="container">
+      <header class="section-header section-header--center">
+        <span class="eyebrow">Portfolio</span>
+        <h2 class="section-title" id="real-title">Nos dernières réalisations</h2>
+        <p class="section-subtitle">Quelques exemples de nos travaux récents — avant et après transformation.</p>
+      </header>
+
+      <div class="projects-grid">
+
+        <article class="project-card reveal reveal--scale reveal--delay-2">
+          <div class="hover-zoom" style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden; height:240px;">
+            <img
+              src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=700&q=80&auto=format&fit=crop"
+              alt="Rénovation toiture — maison individuelle"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;"
+            >
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Toiture</span>
+            <h3 class="project-card__title">Réfection complète d'une toiture en tuiles</h3>
+            <p class="project-card__desc">Dépose, isolation et pose de nouvelles tuiles — résultat garanti 20 ans.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--scale reveal--delay-3">
+          <div class="hover-zoom" style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden; height:240px;">
+            <img
+              src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80&auto=format&fit=crop"
+              alt="Ravalement de façade — maison rénovée"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;"
+            >
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Façade</span>
+            <h3 class="project-card__title">Ravalement de façade sur maison individuelle</h3>
+            <p class="project-card__desc">Nettoyage haute pression, traitement et application d'un enduit de finition.</p>
+          </div>
+        </article>
+
+        <article class="project-card reveal reveal--scale reveal--delay-1">
+          <div class="hover-zoom" style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; overflow:hidden; height:240px;">
+            <img
+              src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=700&q=80&auto=format&fit=crop"
+              alt="Rénovation murs intérieurs — pièce remise à neuf"
+              loading="lazy"
+              style="width:100%;height:100%;object-fit:cover;"
+            >
+          </div>
+          <div class="project-card__info">
+            <span class="project-card__category">Murs intérieurs</span>
+            <h3 class="project-card__title">Remise à neuf d'une maison ancienne</h3>
+            <p class="project-card__desc">Enduit de lissage sur l'ensemble des murs, peinture bi-couche — 120 m² de surface murale.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="realisations-teaser__cta">
+        <a href="realisations.html" class="btn btn--primary btn--lg">
+          Voir toutes nos réalisations
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CTA FINAL
+       ===================================================================== -->
+  <section class="cta-banner" aria-labelledby="cta-title">
+    <div class="container" style="position:relative; z-index:1;">
+      <h2 id="cta-title">Votre projet de rénovation commence ici</h2>
+      <p>Contactez-nous dès aujourd'hui pour une étude gratuite et sans engagement.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="contact.html" class="btn btn--outline-white btn--lg">Demander un devis gratuit</a>
+        <a href="tel:0619014917" class="btn btn--lg" style="background:rgba(255,255,255,0.15);color:white;border:2px solid rgba(255,255,255,0.4);">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:18px;height:18px;"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          06 19 01 49 17
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1 : Brand -->
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo" aria-label="GRD Rénovation">
+            <img src="img/logo.png" alt="GRD Rénovation" class="site-logo__img">
+          </a>
+          <p class="footer-tagline">
+            Entreprise de rénovation intérieure et extérieure, fondée par Giraud Anthony. Plus de 20 ans d'expérience pour des réalisations durables et de qualité.
+          </p>
+          <span class="footer-badge">🏠 Créée en octobre 2025</span>
+        </div>
+
+        <!-- Col 2 : Navigation -->
+        <div>
+          <p class="footer-col__title">Navigation</p>
+          <nav class="footer-nav" aria-label="Navigation footer">
+            <a href="index.html">Accueil</a>
+            <a href="about.html">À propos</a>
+            <a href="services.html">Services</a>
+            <a href="realisations.html">Réalisations</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+
+        <!-- Col 3 : Contact -->
+        <div>
+          <p class="footer-col__title">Contact</p>
+          <div class="footer-contact-item">
+            <div class="footer-contact-item__icon" aria-hidden="true">📞</div>
+            <div class="footer-contact-item__text">
+              <a href="tel:0619014917">06 19 01 49 17</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-item__icon" aria-hidden="true">✉</div>
+            <div class="footer-contact-item__text">
+              <a href="mailto:grdrenov@gmail.com">grdrenov@gmail.com</a>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-item__icon" aria-hidden="true">📍</div>
+            <div class="footer-contact-item__text">
+              Région Centre<br>
+              <small style="color: rgba(255,255,255,0.4);">Indre-et-Loire, Loir-et-Cher, Cher, Indre, Eure-et-Loir, Loiret</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="footer-bottom">
+        <p>© 2025 GRD Rénovation — Tous droits réservés</p>
+        <p>Giraud Anthony — <a href="mailto:grdrenov@gmail.com">grdrenov@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Boutons flottants -->
+  <div class="floating-cta" id="floatingCta" aria-label="Actions rapides">
+    <a href="tel:0619014917" class="floating-btn floating-btn--call animate-slide-up--delay-1" aria-label="Appeler GRD Rénovation">
+      <svg class="floating-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+      <span class="floating-btn__text">Appeler</span>
+    </a>
+    <a href="contact.html" class="floating-btn floating-btn--quote animate-slide-up--delay-2" aria-label="Demander un devis gratuit">
+      <svg class="floating-btn__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+      <span class="floating-btn__text">Devis gratuit</span>
+    </a>
+  </div>
+
+  <!-- JS -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
