@@ -52,18 +52,35 @@
 }
 
 .site-logo__img {
-  height: 96px;
+  height: clamp(140px, 18vw, 290px);
   width: auto;
-  filter: invert(1);
-  transition: opacity var(--transition-base);
+  filter: brightness(0) invert(1) drop-shadow(0 2px 10px rgba(0, 0, 0, 0.35));
+  transition: height var(--transition-base), opacity var(--transition-base), filter var(--transition-base);
 }
 
-@media (max-width: 1024px) {
-  .site-logo__img { height: 72px; }
+@media (max-width: 1200px) {
+  .site-logo__img { height: clamp(120px, 16vw, 240px); }
+}
+
+@media (max-width: 768px) {
+  .site-logo__img { height: clamp(100px, 18vw, 180px); }
 }
 
 @media (max-width: 480px) {
-  .site-logo__img { height: 54px; }
+  .site-logo__img { height: clamp(80px, 22vw, 140px); }
+}
+
+/* Logo réduit quand le header est scrollé ou solid */
+.site-header.scrolled .site-logo__img,
+.site-header--solid .site-logo__img {
+  height: clamp(70px, 10vw, 160px);
+}
+
+@media (max-width: 768px) {
+  .site-header.scrolled .site-logo__img,
+  .site-header--solid .site-logo__img {
+    height: clamp(60px, 12vw, 110px);
+  }
 }
 
 .site-logo:hover .site-logo__img {
