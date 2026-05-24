@@ -14,6 +14,20 @@
   justify-content: center;
   overflow: hidden;
   background-color: var(--color-primary);
+  padding-top: 200px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .hero { padding-top: 180px; }
+}
+
+@media (max-width: 768px) {
+  .hero { padding-top: 160px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 140px; }
 }
 
 .hero__video {
