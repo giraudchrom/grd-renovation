@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/pages/services.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -98,11 +99,11 @@
             <span class="service-content__icon" aria-hidden="true">🏠</span>
             Rénovation de toiture
           </h2>
-          <p class="service-desc">
+          <p class="service-desc" data-cms="toiture_description">
             Votre toiture est le premier rempart de votre maison contre les intempéries. Une couverture en bon état, c'est l'assurance d'une maison saine et d'une isolation optimale. GRD Rénovation vous propose des interventions complètes, du nettoyage à la réfection totale.
           </p>
 
-          <ul class="service-list" aria-label="Prestations toiture">
+          <ul class="service-list" aria-label="Prestations toiture" data-cms-list="toiture_prestations">
             <li>Nettoyage basse pression</li>
             <li>Gouttières alu / PVC / zinc</li>
             <li>Traitement fongicide</li>
@@ -156,11 +157,11 @@
             <span class="service-content__icon" aria-hidden="true">🏡</span>
             Rénovation de façade
           </h2>
-          <p class="service-desc">
+          <p class="service-desc" data-cms="facade_description">
             La façade de votre maison, c'est son visage. Un ravalement réussi valorise votre bien, le protège des infiltrations et améliore ses performances thermiques. Nous réalisons des ravalements dans les règles de l'art, avec des finitions impeccables.
           </p>
 
-          <ul class="service-list" aria-label="Prestations façade" style="grid-template-columns:1fr">
+          <ul class="service-list" aria-label="Prestations façade" style="grid-template-columns:1fr" data-cms-list="facade_prestations">
             <li>Ravalement de façade</li>
             <li>Traitement des fissures</li>
             <li>Traitement de l'humidité</li>
@@ -209,11 +210,11 @@
             <span class="service-content__icon" aria-hidden="true">🖌️</span>
             Murs intérieurs et sols
           </h2>
-          <p class="service-desc">
+          <p class="service-desc" data-cms="murs_description">
             Des murs impeccables pour un intérieur qui vous ressemble. Que ce soit pour une rénovation complète ou une simple remise en état, nous intervenons sur tous vos murs intérieurs avec une finition soignée qui fait la différence.
           </p>
 
-          <ul class="service-list" aria-label="Prestations murs intérieurs et sols">
+          <ul class="service-list" aria-label="Prestations murs intérieurs et sols" data-cms-list="murs_prestations">
             <li>Plâtrerie traditionnelle</li>
             <li>Aménagement de combles</li>
             <li>Enduit décoratif</li>
@@ -381,6 +382,18 @@
     </a>
   </div>
 
+  <script type="module" src="js/cms-loader.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function() {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -66,6 +66,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/pages/home.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -169,19 +170,19 @@
     <div class="container">
       <div class="stats-grid">
         <div class="stat-item reveal reveal--delay-1">
-          <span class="stat-item__number" data-counter data-target="20" data-suffix="+">20+</span>
+          <span class="stat-item__number" data-counter data-target="20" data-suffix="+" data-cms-stat="stat_years">20+</span>
           <span class="stat-item__label">Années d'expérience</span>
         </div>
         <div class="stat-item reveal reveal--delay-2">
-          <span class="stat-item__number" data-counter data-target="200" data-suffix="+">200+</span>
+          <span class="stat-item__number" data-counter data-target="200" data-suffix="+" data-cms-stat="stat_chantiers">200+</span>
           <span class="stat-item__label">Chantiers réalisés</span>
         </div>
         <div class="stat-item reveal reveal--delay-3">
-          <span class="stat-item__number" data-counter data-target="4" data-suffix="">4</span>
+          <span class="stat-item__number" data-counter data-target="4" data-suffix="" data-cms-stat="stat_services">4</span>
           <span class="stat-item__label">Services spécialisés</span>
         </div>
         <div class="stat-item reveal reveal--delay-4">
-          <span class="stat-item__number" data-counter data-target="100" data-suffix="%">100%</span>
+          <span class="stat-item__number" data-counter data-target="100" data-suffix="%" data-cms-stat="stat_satisfaction">100%</span>
           <span class="stat-item__label">Clients satisfaits</span>
         </div>
       </div>
@@ -500,6 +501,18 @@
   </div>
 
   <!-- JS -->
+  <script type="module" src="js/cms-loader.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function() {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -23,14 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Compteurs animés (page accueil)
   initCounters();
 
-  // Slider avant/après (page réalisations)
-  initBeforeAfter();
-
   // Formulaire de contact + accordéons services
   initForm();
 
-  // Filtres de la galerie (page réalisations)
-  initFilter();
+  // Slider avant/après + filtres (page réalisations)
+  // Attend cms:ready si la grille est gérée par le loader, sinon démarre direct
+  const grid = document.getElementById('projectsGrid');
+  if (grid) {
+    let ran = false;
+    const run = () => { if (ran) return; ran = true; initBeforeAfter(); initFilter(); };
+    window.addEventListener('cms:ready', run, { once: true });
+    setTimeout(run, 3000); // fallback si le fetch échoue
+  } else {
+    initBeforeAfter();
+    initFilter();
+  }
 
   // Smooth scroll pour les ancres internes
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

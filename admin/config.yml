@@ -1,0 +1,120 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "img/chantiers"
+public_folder: "/img/chantiers"
+
+locale: fr
+
+collections:
+
+  # ── RÉALISATIONS ──────────────────────────────────────────────────────────
+  - name: realisations
+    label: "Réalisations (portfolio)"
+    files:
+      - name: projects
+        label: "Projets avant / après"
+        file: "_data/realisations.json"
+        format: json
+        editor:
+          preview: false
+        fields:
+          - name: projects
+            label: "Projets"
+            label_singular: "Projet"
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: "Titre du projet", widget: string }
+              - name: category
+                label: "Catégorie"
+                widget: select
+                options:
+                  - { label: "Toiture", value: toiture }
+                  - { label: "Façade", value: facade }
+                  - { label: "Murs intérieurs", value: murs }
+              - { name: description, label: "Description courte", widget: text }
+              - { name: image_before, label: "Photo AVANT", widget: image }
+              - { name: image_before_alt, label: "Légende AVANT (accessibilité)", widget: string, required: false }
+              - { name: image_after, label: "Photo APRÈS", widget: image }
+              - { name: image_after_alt, label: "Légende APRÈS (accessibilité)", widget: string, required: false }
+
+  # ── INFORMATIONS DU SITE ─────────────────────────────────────────────────
+  - name: site
+    label: "Coordonnées & contact"
+    files:
+      - name: site_info
+        label: "Téléphone, email, Instagram"
+        file: "_data/site.json"
+        format: json
+        editor:
+          preview: false
+        fields:
+          - { name: phone, label: "Téléphone affiché (ex: 06 19 01 49 17)", widget: string }
+          - { name: phone_raw, label: "Téléphone sans espaces (ex: 0619014917)", widget: string, hint: "Utilisé pour les liens d'appel — ne pas mettre d'espaces" }
+          - { name: email, label: "Adresse email", widget: string }
+          - { name: instagram, label: "Lien Instagram (URL complète)", widget: string }
+
+  # ── PAGE SERVICES ─────────────────────────────────────────────────────────
+  - name: services
+    label: "Page Services"
+    files:
+      - name: services_content
+        label: "Descriptions et prestations"
+        file: "_data/services.json"
+        format: json
+        editor:
+          preview: false
+        fields:
+          - { name: toiture_description, label: "Description — Toiture", widget: text }
+          - name: toiture_prestations
+            label: "Liste prestations — Toiture"
+            widget: list
+            allow_add: true
+            field: { name: value, label: "Prestation", widget: string }
+          - { name: facade_description, label: "Description — Façade", widget: text }
+          - name: facade_prestations
+            label: "Liste prestations — Façade"
+            widget: list
+            allow_add: true
+            field: { name: value, label: "Prestation", widget: string }
+          - { name: murs_description, label: "Description — Murs intérieurs", widget: text }
+          - name: murs_prestations
+            label: "Liste prestations — Murs intérieurs"
+            widget: list
+            allow_add: true
+            field: { name: value, label: "Prestation", widget: string }
+
+  # ── PAGE À PROPOS ─────────────────────────────────────────────────────────
+  - name: about
+    label: "Page À propos"
+    files:
+      - name: about_content
+        label: "Textes page À propos"
+        file: "_data/about.json"
+        format: json
+        editor:
+          preview: false
+        fields:
+          - { name: hero_subtitle, label: "Sous-titre de l'en-tête", widget: text }
+          - { name: intro_p1, label: "Paragraphe 1 — Présentation", widget: text }
+          - { name: intro_p2, label: "Paragraphe 2 — Création entreprise", widget: text }
+          - { name: intro_p3, label: "Paragraphe 3 — Engagement qualité", widget: text }
+          - { name: quote, label: "Citation d'Anthony", widget: text }
+
+  # ── PAGE ACCUEIL — CHIFFRES CLÉS ─────────────────────────────────────────
+  - name: home
+    label: "Page Accueil — chiffres clés"
+    files:
+      - name: home_content
+        label: "Statistiques affichées"
+        file: "_data/home.json"
+        format: json
+        editor:
+          preview: false
+        fields:
+          - { name: stat_years, label: "Années d'expérience (chiffre seul, ex: 20)", widget: string }
+          - { name: stat_chantiers, label: "Chantiers réalisés (chiffre seul, ex: 200)", widget: string }
+          - { name: stat_services, label: "Nombre de services (ex: 4)", widget: string }
+          - { name: stat_satisfaction, label: "Satisfaction clients en % (ex: 100)", widget: string }

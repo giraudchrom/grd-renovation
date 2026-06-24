@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/pages/about.css">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
@@ -75,7 +76,7 @@
       <div class="page-hero__content">
         <span class="eyebrow page-hero__eyebrow">Notre histoire</span>
         <h1>L'artisan derrière chaque rénovation</h1>
-        <p class="page-hero__subtitle">Giraud Anthony et son équipe mettent leur passion et leur expertise au service de vos projets depuis plus de 20 ans.</p>
+        <p class="page-hero__subtitle" data-cms="hero_subtitle">Giraud Anthony et son équipe mettent leur passion et leur expertise au service de vos projets depuis plus de 20 ans.</p>
       </div>
     </div>
   </section>
@@ -102,13 +103,13 @@
         <div class="about-intro__text reveal reveal--right">
           <span class="eyebrow">À propos de GRD Rénovation</span>
           <h2 id="about-title" class="section-title">Une expertise construite chantier après chantier</h2>
-          <p>
+          <p data-cms="intro_p1">
             GRD Rénovation, c'est avant tout l'histoire d'un artisan passionné. Giraud Anthony a consacré plus de 20 ans à maîtriser les techniques de rénovation dans leur ensemble — de la toiture jusqu'aux sols — pour offrir aujourd'hui un service complet, fiable et de haute qualité.
           </p>
-          <p>
+          <p data-cms="intro_p2">
             C'est en octobre 2025 qu'Anthony a franchi le pas en fondant sa propre entreprise; SARL, GRD Rénovation. Un projet longuement mûri, porté par la conviction qu'une rénovation réussie passe avant tout par l'écoute du client, la rigueur dans l'exécution et le choix de matériaux durables.
           </p>
-          <p>
+          <p data-cms="intro_p3">
             Chaque chantier est abordé avec le même soin, qu'il s'agisse d'une réfection de toiture, d'un ravalement de façade ou d'une remise à neuf des murs intérieurs. Chez GRD, on ne fait pas dans la quantité — on mise sur la qualité.
           </p>
 
@@ -178,7 +179,7 @@
             Au fil des années, Anthony a multiplié les expériences, des petits travaux d'entretien aux rénovations complètes de maisons. C'est cette richesse de terrain qui fait la force de GRD Rénovation : une vision globale du chantier, une capacité à anticiper les problèmes et à proposer les solutions les plus adaptées.
           </p>
           <div class="timeline-highlight">
-            <p>"La rénovation, c'est d'abord une question de confiance. On entre chez les gens, on touche à leur quotidien. Ce n'est pas anodin — ça mérite le meilleur de soi."</p>
+            <p data-cms="quote">"La rénovation, c'est d'abord une question de confiance. On entre chez les gens, on touche à leur quotidien. Ce n'est pas anodin — ça mérite le meilleur de soi."</p>
           </div>
         </div>
 
@@ -327,6 +328,18 @@
     </a>
   </div>
 
+  <script type="module" src="js/cms-loader.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function(user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function() {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
