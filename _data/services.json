@@ -1,0 +1,31 @@
+{
+  "toiture_description": "Votre toiture est le premier rempart de votre maison contre les intempéries. Une couverture en bon état, c'est l'assurance d'une maison saine et d'une isolation optimale. GRD Rénovation vous propose des interventions complètes, du nettoyage à la réfection totale.",
+  "toiture_prestations": [
+    "Nettoyage basse pression",
+    "Gouttières alu / PVC / zinc",
+    "Traitement fongicide",
+    "Dessous de toit alu / PVC / zinc",
+    "Traitement hydrofuge",
+    "Isolation des combles",
+    "Changement de faîtage",
+    "Couverture tuiles et ardoises"
+  ],
+  "facade_description": "La façade de votre maison, c'est son visage. Un ravalement réussi valorise votre bien, le protège des infiltrations et améliore ses performances thermiques. Nous réalisons des ravalements dans les règles de l'art, avec des finitions impeccables.",
+  "facade_prestations": [
+    "Ravalement de façade",
+    "Traitement des fissures",
+    "Traitement de l'humidité",
+    "Isolation extérieure thermique"
+  ],
+  "murs_description": "Des murs impeccables pour un intérieur qui vous ressemble. Que ce soit pour une rénovation complète ou une simple remise en état, nous intervenons sur tous vos murs intérieurs avec une finition soignée qui fait la différence.",
+  "murs_prestations": [
+    "Plâtrerie traditionnelle",
+    "Aménagement de combles",
+    "Enduit décoratif",
+    "Pose de cloisons",
+    "Revêtements muraux",
+    "Revêtement de sol",
+    "Tapisserie",
+    "Isolation intérieure"
+  ]
+}

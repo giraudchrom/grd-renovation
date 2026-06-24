@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "category": "facade",
+      "title": "Ravalement de façade sur maison individuelle",
+      "description": "Nettoyage haute pression, enduit de façade et application d'une peinture hydrofuge.",
+      "image_before": "/img/chantiers/facade-avant.jpeg",
+      "image_before_alt": "Avant ravalement — façade très sale",
+      "image_after": "/img/chantiers/facade-apres.jpeg",
+      "image_after_alt": "Après ravalement de façade — maison GRD Rénovation"
+    },
+    {
+      "category": "murs",
+      "title": "Remise à neuf d'une maison ancienne",
+      "description": "Enduit de lissage sur l'ensemble des murs, peinture bi-couche — 120 m² de surface murale.",
+      "image_before": "/img/chantiers/mur-avant.png",
+      "image_before_alt": "Avant rénovation — murs en cours de travaux",
+      "image_after": "/img/chantiers/mur-interieur.png",
+      "image_after_alt": "Après rénovation murs intérieurs"
+    },
+    {
+      "category": "toiture",
+      "title": "Réfection complète d'une toiture en tuiles",
+      "description": "Dépose totale, isolation sous toiture, pose de nouvelles tuiles mécaniques — maison individuelle.",
+      "image_before": "/img/chantiers/toiture-avant-ardoise.jpeg",
+      "image_before_alt": "Avant réfection — toiture ardoise vieillie",
+      "image_after": "/img/chantiers/toiture-apres-ardoise.jpeg",
+      "image_after_alt": "Après réfection toiture ardoise"
+    }
+  ]
+}
