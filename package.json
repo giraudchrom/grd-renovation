@@ -1,0 +1,12 @@
+{
+  "name": "grd-renovation",
+  "private": true,
+  "description": "Site vitrine GRD Rénovation — outillage de test (aucune dépendance requise pour le site lui-même)",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "serve": "^14.2.6"
+  }
+}
