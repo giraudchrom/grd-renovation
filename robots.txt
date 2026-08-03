@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.grdrenovation.fr/sitemap.xml
+Sitemap: https://www.grdrenovation.com/sitemap.xml

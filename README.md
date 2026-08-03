@@ -71,11 +71,12 @@ Voir [tests/contact-form.spec.js](tests/contact-form.spec.js).
 
 ## Notes / points de vigilance
 
-Points repérés en explorant le repo, à corriger via le CMS ou par un point avec le client — rien n'a été modifié automatiquement :
+**Corrigés** (code/méta-données, pas du contenu CMS) :
+- ~~Copyright figé à "© 2025"~~ → mis à jour vers 2026 dans tous les footers.
+- ~~Domaine incorrect~~ → tout le code référençait `grdrenovation.fr`, qui ne résout même pas en DNS. Le vrai site en production est **`www.grdrenovation.com`** (confirmé en direct). Corrigé partout : canonical, Open Graph, JSON-LD, `robots.txt`, et ajout d'un `sitemap.xml` (référencé par `robots.txt` mais absent du repo jusqu'ici).
+- ~~JSON-LD invalide~~ → virgule finale en trop dans `itemListElement` ([index.html](index.html)), supprimée ; le bloc `application/ld+json` parse maintenant correctement.
+- ~~Zone d'intervention~~ → [contact.html:157](contact.html#L157) listait "Région Centre" à la place du département "Indre-et-Loire" (copier-coller), corrigé pour correspondre à la liste correcte d'[index.html:467](index.html#L467).
+- ~~Forme juridique incohérente~~ → `mentions-legales.html` indiquait "Entreprise individuelle" contre "SARL" dans `about.html`/`about.json` ; confirmé SARL par le client, `mentions-legales.html` mis à jour en conséquence (et sa date de dernière mise à jour).
 
-- **Copyright figé à "© 2025"** dans tous les footers.
-- **`mentions-legales.html`** : "Dernière mise à jour : octobre 2025".
-- **Forme juridique incohérente** : `about.html`/`about.json` mentionnent une "SARL", `mentions-legales.html` indique "Entreprise individuelle".
-- **Zone d'intervention** ([contact.html:157](contact.html#L157)) : liste "Région Centre, Loir-et-Cher, Cher, Indre, Eure-et-Loir, Loiret" — "Région Centre" apparaît à la place du département "Indre-et-Loire" (probable copier-coller), alors que [index.html:467](index.html#L467) a la bonne liste des 6 départements.
-- **Domaine** : le code référence uniquement `grdrenovation.fr` (canonical, `robots.txt`, JSON-LD) — à vérifier si `grdrenovation.com` doit aussi être pris en compte/redirigé.
-- **JSON-LD invalide** ([index.html](index.html), bloc `application/ld+json`) : une virgule finale dans `itemListElement` rend ce bloc invalide (échoue au parsing JSON), ce qui casse les données structurées pour les moteurs de recherche. Bug technique, pas un problème de contenu — à corriger côté code.
+**Repéré, pas corrigé** (pas assez d'info pour deviner juste) :
+- `mentions-legales.html` : **"Activité : Nettoyage courant des bâtiments"** — probablement un mauvais libellé d'activité (code APE/NAF) pour une entreprise de rénovation bâtiment. À vérifier avec le client/l'expert-comptable, pas quelque chose que je peux corriger sans connaître la bonne valeur.
