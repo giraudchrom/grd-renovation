@@ -78,5 +78,5 @@ Voir [tests/contact-form.spec.js](tests/contact-form.spec.js).
 - ~~Zone d'intervention~~ → [contact.html:157](contact.html#L157) listait "Région Centre" à la place du département "Indre-et-Loire" (copier-coller), corrigé pour correspondre à la liste correcte d'[index.html:467](index.html#L467).
 - ~~Forme juridique incohérente~~ → `mentions-legales.html` indiquait "Entreprise individuelle" contre "SARL" dans `about.html`/`about.json` ; confirmé SARL par le client, `mentions-legales.html` mis à jour en conséquence (et sa date de dernière mise à jour).
 
-**Repéré, pas corrigé** (pas assez d'info pour deviner juste) :
-- `mentions-legales.html` : **"Activité : Nettoyage courant des bâtiments"** — probablement un mauvais libellé d'activité (code APE/NAF) pour une entreprise de rénovation bâtiment. À vérifier avec le client/l'expert-comptable, pas quelque chose que je peux corriger sans connaître la bonne valeur.
+**Vérifié, pas un bug** :
+- `mentions-legales.html` : "Activité : Nettoyage courant des bâtiments" — confirmé via l'annuaire officiel des entreprises (SIREN 994315968) que c'est bien le code APE/NAF réel (81.21Z) enregistré pour cette structure. Rien à corriger.
