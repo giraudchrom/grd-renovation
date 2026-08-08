@@ -57,9 +57,9 @@ Logique dans [js/form.js](js/form.js) :
 
 ## Tests
 
-Tests e2e minimaux (Playwright) :
+Tests e2e minimaux (Playwright), exécutés sur deux profils (`chromium` desktop et `mobile-chromium`, Pixel 7) :
 - [tests/contact-form.spec.js](tests/contact-form.spec.js) — formulaire de contact : soumission valide (appel réseau vers Web3Forms intercepté, aucun vrai envoi) et validation côté client sur formulaire vide.
-- [tests/pages-smoke.spec.js](tests/pages-smoke.spec.js) — charge chaque page publique et vérifie l'absence d'erreurs console et de ressources cassées (404/403...). C'est ce test qui a détecté et permis de corriger une vidéo hero cassée (hotlink Pexels expiré, remplacé par l'image statique `img/chantiers/hero-accueil.jpeg`).
+- [tests/pages-smoke.spec.js](tests/pages-smoke.spec.js) — charge chaque page publique et vérifie l'absence d'erreurs console, de ressources cassées (404/403...) et de débordement horizontal (`scrollWidth` vs `clientWidth`). C'est ce test qui a détecté et permis de corriger une vidéo hero cassée (hotlink Pexels expiré, remplacé par l'image statique `img/chantiers/hero-accueil.jpeg`), et plus tard un débordement horizontal fantôme sur mobile (voir ci-dessous).
 
 ```bash
 npm install
@@ -77,6 +77,7 @@ Voir [tests/contact-form.spec.js](tests/contact-form.spec.js).
 - ~~JSON-LD invalide~~ → virgule finale en trop dans `itemListElement` ([index.html](index.html)), supprimée ; le bloc `application/ld+json` parse maintenant correctement.
 - ~~Zone d'intervention~~ → [contact.html:157](contact.html#L157) listait "Région Centre" à la place du département "Indre-et-Loire" (copier-coller), corrigé pour correspondre à la liste correcte d'[index.html:467](index.html#L467).
 - ~~Forme juridique incohérente~~ → `mentions-legales.html` indiquait "Entreprise individuelle" contre "SARL" dans `about.html`/`about.json` ; confirmé SARL par le client, `mentions-legales.html` mis à jour en conséquence (et sa date de dernière mise à jour).
+- ~~Débordement horizontal fantôme sur mobile~~ → le menu mobile (`.mobile-menu`, `position: fixed; inset: 0` + `transform: translateX(100%)` quand fermé) n'était pas contenu par le `overflow-x: hidden` posé sur `body` seul ([css/base.css](css/base.css)) : un élément `position: fixed` échappe au clipping de son parent et ne respecte que celui de `html`. Résultat : 26px de scroll horizontal fantôme sur `index`/`about`/`services`/`contact` en viewport mobile, invisible à l'œil mais présent dans le DOM. Corrigé en ajoutant `overflow-x: hidden` à `html` en plus de `body`. Détecté par un nouveau test (`mobile-chromium` + assertion `scrollWidth`/`clientWidth` dans `pages-smoke.spec.js`) qui n'existait pas avant ce passage — les tests ne tournaient qu'en desktop malgré 20 media queries dans le CSS.
 
 **Vérifié, pas un bug** :
 - `mentions-legales.html` : "Activité : Nettoyage courant des bâtiments" — confirmé via l'annuaire officiel des entreprises (SIREN 994315968) que c'est bien le code APE/NAF réel (81.21Z) enregistré pour cette structure. Rien à corriger.

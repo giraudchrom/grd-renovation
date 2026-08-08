@@ -30,5 +30,10 @@ for (const pagePath of PAGES) {
 
     expect(consoleErrors, `Erreurs console sur ${pagePath}`).toEqual([]);
     expect(failedRequests, `Ressources en échec sur ${pagePath}`).toEqual([]);
+
+    const overflow = await page.evaluate(
+      () => document.documentElement.scrollWidth - document.documentElement.clientWidth
+    );
+    expect(overflow, `Débordement horizontal sur ${pagePath} (${overflow}px)`).toBeLessThanOrEqual(1);
   });
 }
